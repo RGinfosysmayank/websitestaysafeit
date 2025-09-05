@@ -7,11 +7,14 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>StaySafe IT Solutions</h3>
-            <p>Leading website development company in India specializing in ReactJS, .NET Core, Java, and mobile app development.</p>
-            <p><strong>📍 Based in Delhi, India – Serving Globally</strong></p>
-            <p><strong>📞 +91-8800869033</strong></p>
-            <p><strong>✉️ sales@staysafeit.com</strong></p>
+            <h3>StaySafe IT Solutions - Delhi, India</h3>
+            <p>Leading website development company in Delhi, India, specializing in ReactJS, .NET Core, Java, and mobile app development. Serving clients globally with 5+ years of experience and 200+ successful projects.</p>
+            <p><strong>🏢 Company:</strong> StaySafe IT Solutions Pvt. Ltd.</p>
+            <p><strong>📍 Location:</strong> Based in Delhi, NCR, India – Serving Globally</p>
+            <p><strong>📞 Phone:</strong> +91-8800869033 (Available 24/7)</p>
+            <p><strong>✉️ Email:</strong> sales@staysafeit.com</p>
+            <p><strong>💼 LinkedIn:</strong> <a href="https://linkedin.com/company/staysafe-it-solutions" target="_blank" rel="noopener noreferrer" style={{ color: '#667eea' }}>Connect with us</a></p>
+            <p><strong>⭐ Rating:</strong> 4.8/5 (150+ Client Reviews)</p>
           </div>
           
           <div className="footer-section">
@@ -43,7 +46,9 @@ const Footer = () => {
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; 2024 StaySafe IT Solutions. All rights reserved. | High-Quality Web & Mobile Solutions</p>
+          <p>&copy; 2024 StaySafe IT Solutions Pvt. Ltd. | Delhi, India | All rights reserved.</p>
+          <p>High-Quality Web & Mobile Solutions | ReactJS • .NET Core • Java • React Native • AI Consulting</p>
+          <p>🏆 200+ Projects Completed | 150+ Happy Clients | 5+ Years Experience | 24/7 Support</p>
         </div>
       </div>
     </footer>

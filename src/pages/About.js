@@ -6,10 +6,11 @@ const About = () => {
       {/* About Hero Section */}
       <section className="section section-primary">
         <div className="container text-center">
-          <h1 style={{ color: 'white' }}>About StaySafe IT Solutions</h1>
+          <h1 style={{ color: 'white' }}>Who Is StaySafe IT Solutions?</h1>
           <p style={{ fontSize: '1.2rem', color: 'white', maxWidth: '800px', margin: '0 auto' }}>
-            Leading website development company in India with 5+ years of experience in delivering 
-            high-quality web and mobile solutions to businesses worldwide.
+            If you're curious about who we are, here's our story: StaySafe IT Solutions is a Delhi-based website development 
+            company that has been transforming businesses digitally for over 5 years. We're not just another IT company – 
+            we're your technology partners committed to your success.
           </p>
         </div>
       </section>
@@ -19,28 +20,39 @@ const About = () => {
         <div className="container">
           <div className="grid grid-2">
             <div>
-              <h2>Our Story</h2>
+              <h2>How Did StaySafe IT Solutions Begin?</h2>
               <p>
-                Founded with a vision to bridge the technology gap for businesses, StaySafe IT Solutions 
-                has grown from a small startup to a trusted technology partner for over 150+ clients globally. 
-                Based in Delhi, India, we specialize in cutting-edge web and mobile development solutions.
+                Our journey started in 2019 in Delhi, India, when our founders recognized a gap in the market. Many businesses, 
+                especially small and medium enterprises, were struggling to find reliable, affordable, and high-quality 
+                technology solutions. We decided to bridge this gap.
               </p>
               <p>
-                Our journey began with a simple mission: to provide high-quality, cost-effective IT solutions 
-                that help businesses thrive in the digital age. Today, we're proud to have completed 200+ 
-                successful projects spanning various industries and technologies.
+                What began as a small team of passionate developers in Delhi has now grown into a trusted technology partner 
+                for over 150+ clients globally. We've completed 200+ successful projects, but what we're most proud of is 
+                the long-term relationships we've built with our clients.
+              </p>
+              <p>
+                <strong>The StaySafe Promise:</strong> Every project we undertake comes with our commitment to quality, 
+                transparency, and timely delivery. We believe in building solutions that not only meet your current needs 
+                but also scale with your business growth.
               </p>
             </div>
             <div>
-              <h2>Our Mission</h2>
+              <h2>What Drives Us Every Day?</h2>
               <p>
-                To empower businesses with innovative technology solutions that drive growth, efficiency, 
-                and digital transformation. We believe in creating long-term partnerships with our clients 
-                by delivering exceptional value through our expertise.
+                Our mission is simple: to empower businesses with innovative technology solutions that drive growth, 
+                efficiency, and digital transformation. Whether you're a startup in Delhi looking for your first website 
+                or a multinational corporation needing complex enterprise solutions, we approach every project with the 
+                same level of dedication.
+              </p>
+              <p>
+                <strong>Why Choose Us Over Other Companies in Delhi?</strong> While there are many IT companies in Delhi NCR, 
+                what sets StaySafe IT Solutions apart is our client-first approach. We don't just build software; we build 
+                relationships. Our 98% client retention rate and 24/7 support commitment are testament to this philosophy.
               </p>
               <div className="mt-2">
                 <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                  Get Free Consultation
+                  Start Your Project With Us
                 </a>
               </div>
             </div>

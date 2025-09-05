@@ -65,10 +65,11 @@ const Contact = () => {
       {/* Contact Hero Section */}
       <section className="section section-primary">
         <div className="container text-center">
-          <h1 style={{ color: 'white' }}>Get In Touch</h1>
+          <h1 style={{ color: 'white' }}>How Can You Reach StaySafe IT Solutions?</h1>
           <p style={{ fontSize: '1.2rem', color: 'white', maxWidth: '800px', margin: '0 auto' }}>
-            Ready to start your project? Contact us today for a free consultation 
-            and detailed project proposal tailored to your needs.
+            Looking to connect with a reliable website development company in Delhi, India? Here are all the ways 
+            you can reach StaySafe IT Solutions. We're available 24/7 to discuss your project requirements and 
+            provide free consultations for businesses worldwide.
           </p>
         </div>
       </section>

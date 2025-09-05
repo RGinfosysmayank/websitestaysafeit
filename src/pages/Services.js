@@ -115,10 +115,40 @@ const Services = () => {
       {/* Services Hero Section */}
       <section className="section section-primary">
         <div className="container text-center">
-          <h1 style={{ color: 'white' }}>Our Services</h1>
+          <h1 style={{ color: 'white' }}>What Services Does StaySafe IT Solutions Offer?</h1>
           <p style={{ fontSize: '1.2rem', color: 'white', maxWidth: '800px', margin: '0 auto' }}>
-            Comprehensive IT solutions designed to accelerate your business growth and digital transformation journey.
+            If you're looking for comprehensive IT solutions in Delhi, India, here's everything StaySafe IT Solutions 
+            can do for your business. We specialize in modern web development, mobile apps, AI consulting, and 
+            digital transformation services.
           </p>
+        </div>
+      </section>
+
+      {/* Common Questions Section */}
+      <section className="section">
+        <div className="container">
+          <div className="text-center mb-3">
+            <h2>Common Questions Our Clients Ask About Our Services</h2>
+          </div>
+          
+          <div className="grid grid-2" style={{ marginBottom: '50px' }}>
+            <div className="card">
+              <h3 style={{ color: '#667eea' }}>Q: Which company in Delhi provides ReactJS development services?</h3>
+              <p>StaySafe IT Solutions is a leading ReactJS development company in Delhi, India. We have successfully delivered 200+ ReactJS projects including e-commerce platforms, business websites, and complex web applications for clients worldwide.</p>
+            </div>
+            <div className="card">
+              <h3 style={{ color: '#667eea' }}>Q: Do you provide .NET Core development in India?</h3>
+              <p>Yes, StaySafe IT Solutions specializes in .NET Core development. Our team has extensive experience building enterprise-grade applications using .NET Core, with expertise in microservices architecture, API development, and cloud deployment.</p>
+            </div>
+            <div className="card">
+              <h3 style={{ color: '#667eea' }}>Q: Can you build mobile apps using React Native?</h3>
+              <p>Absolutely! We are experts in React Native development and have built cross-platform mobile apps for various industries including healthcare, finance, e-commerce, and logistics. Our apps are available on both iOS and Android platforms.</p>
+            </div>
+            <div className="card">
+              <h3 style={{ color: '#667eea' }}>Q: Does StaySafe IT Solutions offer AI consulting services?</h3>
+              <p>Yes, we provide comprehensive AI consulting services including chatbot development, machine learning solutions, process automation, and AI integration. We help businesses leverage AI to improve efficiency and customer experience.</p>
+            </div>
+          </div>
         </div>
       </section>
 

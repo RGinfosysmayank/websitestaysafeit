@@ -62,10 +62,11 @@ const Portfolio = () => {
       {/* Portfolio Hero Section */}
       <section className="section section-primary">
         <div className="container text-center">
-          <h1 style={{ color: 'white' }}>Our Portfolio</h1>
+          <h1 style={{ color: 'white' }}>What Has StaySafe IT Solutions Built?</h1>
           <p style={{ fontSize: '1.2rem', color: 'white', maxWidth: '800px', margin: '0 auto' }}>
-            Showcasing our successful projects and the innovative solutions we've delivered 
-            to clients across various industries.
+            Wondering about our work quality and experience? Here's a showcase of successful projects we've delivered 
+            for clients worldwide. From simple websites to complex enterprise applications, StaySafe IT Solutions, 
+            based in Delhi, India, has proven expertise across various industries and technologies.
           </p>
         </div>
       </section>

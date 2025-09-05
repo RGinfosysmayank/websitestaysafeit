@@ -112,20 +112,21 @@ const Home = () => {
       <section className="hero">
         <div className="container">
           <div className="hero-content">
-            <h1 className="fade-in-up">Leading Website Development Company in India</h1>
+            <h1 className="fade-in-up">Are You Looking for the Best Website Development Company in India?</h1>
             <p className="fade-in-up" style={{ fontSize: '1.2rem', marginBottom: '2rem', maxWidth: '800px', margin: '0 auto 2rem' }}>
-              Specializing in ReactJS, .NET Core, Java, and mobile app development. 
-              Transform your business with our high-quality web & mobile solutions.
+              If you're searching for a reliable website development company in Delhi, India, StaySafe IT Solutions is your answer. 
+              We are a leading technology partner specializing in ReactJS, .NET Core, Java, and mobile app development, 
+              serving clients globally from our base in Delhi, NCR.
             </p>
             <div className="fade-in-up">
               <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                Get Quote
+                Get Free Quote
               </a>
               <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-                Hire Developers
+                Hire Expert Developers
               </a>
               <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-success">
-                Get Free Consultation
+                Schedule Free Consultation
               </a>
             </div>
           </div>
@@ -173,9 +174,26 @@ const Home = () => {
       <section className="section">
         <div className="container">
           <div className="text-center mb-3">
-            <h2>Why Choose StaySafe IT Solutions?</h2>
-            <p>We deliver excellence through innovation, expertise, and commitment</p>
+            <h2>Why Choose StaySafe IT Solutions in Delhi, India?</h2>
+            <p>If you're wondering why StaySafe IT Solutions stands out among website development companies in India, here's our story and what makes us different:</p>
           </div>
+          
+          {/* Our Story */}
+          <div className="card" style={{ marginBottom: '40px', background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)' }}>
+            <h3>Our Journey: From Delhi to Global Recognition</h3>
+            <p>
+              StaySafe IT Solutions started in Delhi, India, with a simple mission: to help businesses transform digitally 
+              using the latest technologies. Over the past 5+ years, we've grown from a small team to a trusted technology 
+              partner for 150+ clients worldwide. Based in Delhi NCR, we understand the Indian market dynamics while 
+              delivering international-quality solutions.
+            </p>
+            <p>
+              What began as a passion project to bridge the technology gap for small businesses has evolved into a 
+              comprehensive IT solutions provider. We've completed 200+ successful projects, ranging from simple websites 
+              to complex enterprise applications, always maintaining our core values of quality, transparency, and client satisfaction.
+            </p>
+          </div>
+          
           <div className="grid grid-3">
             {whyChooseUs.map((item, index) => (
               <div key={index} className="card text-center">
@@ -184,6 +202,29 @@ const Home = () => {
                 <p>{item.description}</p>
               </div>
             ))}
+          </div>
+          
+          {/* FAQ Section for GEO */}
+          <div style={{ marginTop: '60px' }}>
+            <h3 className="text-center mb-2">Common Questions Our Clients Ask</h3>
+            <div className="grid grid-2" style={{ gap: '20px' }}>
+              <div className="card">
+                <h4 style={{ color: '#667eea' }}>Q: Why should I choose a Delhi-based company for my project?</h4>
+                <p>Delhi NCR is India's technology hub with access to top talent and cost-effective solutions. StaySafe IT Solutions combines local expertise with global standards, offering you the best of both worlds.</p>
+              </div>
+              <div className="card">
+                <h4 style={{ color: '#667eea' }}>Q: Do you work with international clients?</h4>
+                <p>Yes! While we're based in Delhi, India, we serve clients globally. We've successfully delivered projects for companies in the US, Europe, Australia, and across Asia, with seamless communication and project management.</p>
+              </div>
+              <div className="card">
+                <h4 style={{ color: '#667eea' }}>Q: What makes your ReactJS development different?</h4>
+                <p>Our ReactJS development focuses on performance, scalability, and SEO optimization. We follow industry best practices and use modern tools to ensure your website loads fast and ranks well on search engines.</p>
+              </div>
+              <div className="card">
+                <h4 style={{ color: '#667eea' }}>Q: How do you ensure project success?</h4>
+                <p>We follow agile development methodology with regular updates, milestone-based delivery, and transparent communication. Our 98% client satisfaction rate speaks for our commitment to project success.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

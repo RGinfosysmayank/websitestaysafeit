@@ -131,10 +131,11 @@ const Pricing = () => {
       {/* Pricing Hero Section */}
       <section className="section section-primary">
         <div className="container text-center">
-          <h1 style={{ color: 'white' }}>Transparent Pricing</h1>
+          <h1 style={{ color: 'white' }}>How Much Does Website Development Cost in India?</h1>
           <p style={{ fontSize: '1.2rem', color: 'white', maxWidth: '800px', margin: '0 auto' }}>
-            Competitive rates for high-quality web and mobile development services. 
-            Get the best value for your investment.
+            If you're looking for transparent pricing from a reliable website development company in Delhi, India, 
+            you're in the right place. StaySafe IT Solutions offers competitive rates for high-quality web and 
+            mobile development services. Here's our complete pricing breakdown with no hidden costs.
           </p>
         </div>
       </section>
