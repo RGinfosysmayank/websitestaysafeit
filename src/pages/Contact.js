@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import QuoteForm from '../components/QuoteForm';
+import HireDeveloperForm from '../components/HireDeveloperForm';
 
 const Contact = () => {
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [isHireModalOpen, setIsHireModalOpen] = useState(false);
+  
   const contactInfo = [
     {
       icon: '📞',
@@ -223,14 +228,12 @@ const Contact = () => {
               <div className="card" style={{ marginTop: '20px' }}>
                 <h3>Quick Actions</h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  <a 
-                    href="https://forms.gle/AyAqUqRSrLDfkzDfA" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                  <button 
+                    onClick={() => setIsQuoteModalOpen(true)}
                     className="btn btn-primary"
                   >
                     Get Free Quote
-                  </a>
+                  </button>
                   <a 
                     href="https://forms.gle/AyAqUqRSrLDfkzDfA" 
                     target="_blank" 
@@ -239,14 +242,12 @@ const Contact = () => {
                   >
                     Schedule Consultation
                   </a>
-                  <a 
-                    href="https://forms.gle/AyAqUqRSrLDfkzDfA" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                  <button 
+                    onClick={() => setIsHireModalOpen(true)}
                     className="btn btn-secondary"
                   >
-                    Hire Developers
-                  </a>
+                    Hire Expert Developers
+                  </button>
                 </div>
               </div>
             </div>
@@ -366,6 +367,16 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+      {/* Modals */}
+      <QuoteForm 
+        isOpen={isQuoteModalOpen} 
+        onClose={() => setIsQuoteModalOpen(false)} 
+      />
+      <HireDeveloperForm 
+        isOpen={isHireModalOpen} 
+        onClose={() => setIsHireModalOpen(false)} 
+      />
     </div>
   );
 };

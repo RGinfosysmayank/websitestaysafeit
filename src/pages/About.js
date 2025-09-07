@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import QuoteForm from '../components/QuoteForm';
+import HireDeveloperForm from '../components/HireDeveloperForm';
 
 const About = () => {
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [isHireModalOpen, setIsHireModalOpen] = useState(false);
+  
   return (
     <div style={{ marginTop: '80px' }}>
       {/* About Hero Section */}
@@ -151,15 +156,25 @@ const About = () => {
           <h2>Ready to Work With Us?</h2>
           <p>Let's discuss your project and see how we can help you achieve your goals.</p>
           <div className="mt-2">
-            <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+            <button onClick={() => setIsQuoteModalOpen(true)} className="btn btn-primary">
               Get Quote
-            </a>
-            <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-success">
+            </button>
+            <button onClick={() => setIsHireModalOpen(true)} className="btn btn-success">
               Hire Developers
-            </a>
+            </button>
           </div>
         </div>
       </section>
+
+      {/* Modals */}
+      <QuoteForm 
+        isOpen={isQuoteModalOpen} 
+        onClose={() => setIsQuoteModalOpen(false)} 
+      />
+      <HireDeveloperForm 
+        isOpen={isHireModalOpen} 
+        onClose={() => setIsHireModalOpen(false)} 
+      />
     </div>
   );
 };

@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ServiceCard from '../components/ServiceCard';
 import TestimonialCard from '../components/TestimonialCard';
+import QuoteForm from '../components/QuoteForm';
+import HireDeveloperForm from '../components/HireDeveloperForm';
 
 const Home = () => {
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [isHireModalOpen, setIsHireModalOpen] = useState(false);
+  
   const services = [
     {
       icon: '🌐',
@@ -119,12 +124,12 @@ const Home = () => {
               serving clients globally from our base in Delhi, NCR.
             </p>
             <div className="fade-in-up">
-              <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              <button onClick={() => setIsQuoteModalOpen(true)} className="btn btn-primary">
                 Get Free Quote
-              </a>
-              <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+              </button>
+              <button onClick={() => setIsHireModalOpen(true)} className="btn btn-secondary">
                 Hire Expert Developers
-              </a>
+              </button>
               <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-success">
                 Schedule Free Consultation
               </a>
@@ -259,9 +264,9 @@ const Home = () => {
             Let's discuss your project and create something amazing together
           </p>
           <div>
-            <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-success">
+            <button onClick={() => setIsQuoteModalOpen(true)} className="btn btn-success">
               Get Free Quote
-            </a>
+            </button>
             <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
               View Our Work
             </a>
@@ -296,6 +301,16 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Modals */}
+      <QuoteForm 
+        isOpen={isQuoteModalOpen} 
+        onClose={() => setIsQuoteModalOpen(false)} 
+      />
+      <HireDeveloperForm 
+        isOpen={isHireModalOpen} 
+        onClose={() => setIsHireModalOpen(false)} 
+      />
     </div>
   );
 };

@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import QuoteForm from '../components/QuoteForm';
 
 const Pricing = () => {
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  
   const pricingPlans = [
     {
       name: 'Starter',
@@ -337,9 +340,9 @@ const Pricing = () => {
               <p><strong>📞 Phone:</strong> +91-8800869033</p>
               <p><strong>✉️ Email:</strong> sales@staysafeit.com</p>
               <div className="mt-2">
-                <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                <button onClick={() => setIsQuoteModalOpen(true)} className="btn btn-primary">
                   Get Free Quote
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -363,6 +366,12 @@ const Pricing = () => {
           </div>
         </div>
       </section>
+
+      {/* Modals */}
+      <QuoteForm 
+        isOpen={isQuoteModalOpen} 
+        onClose={() => setIsQuoteModalOpen(false)} 
+      />
     </div>
   );
 };

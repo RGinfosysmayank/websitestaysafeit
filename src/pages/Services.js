@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ServiceCard from '../components/ServiceCard';
+import QuoteForm from '../components/QuoteForm';
 
 const Services = () => {
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  
   const services = [
     {
       icon: '🌐',
@@ -276,15 +279,21 @@ const Services = () => {
           <h2>Ready to Start Your Project?</h2>
           <p>Get a free consultation and detailed project proposal for your requirements.</p>
           <div className="mt-2">
-            <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+            <button onClick={() => setIsQuoteModalOpen(true)} className="btn btn-primary">
               Get Free Quote
-            </a>
+            </button>
             <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-success">
               View Pricing Plans
             </a>
           </div>
         </div>
       </section>
+
+      {/* Modals */}
+      <QuoteForm 
+        isOpen={isQuoteModalOpen} 
+        onClose={() => setIsQuoteModalOpen(false)} 
+      />
     </div>
   );
 };
