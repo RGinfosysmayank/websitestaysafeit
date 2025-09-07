@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ServiceCard from '../components/ServiceCard';
 import TestimonialCard from '../components/TestimonialCard';
 import QuoteForm from '../components/QuoteForm';
@@ -279,9 +280,9 @@ const Home = () => {
             <button onClick={() => setIsQuoteModalOpen(true)} className="btn btn-success">
               Get Free Quote
             </button>
-            <a href="/portfolio" className="btn btn-secondary">
+            <Link to="/portfolio" className="btn btn-secondary">
               View Our Work
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -296,9 +297,9 @@ const Home = () => {
               <p><strong>✉️ Email:</strong> sales@staysafeit.com</p>
               <p><strong>📍 Location:</strong> Based in Delhi, India – Serving Globally</p>
               <p><strong>🌐 Website:</strong> StaySafe IT Solutions</p>
-              <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              <Link to="/contact" className="btn btn-primary">
                 Contact Us
-              </a>
+              </Link>
             </div>
             <div className="card">
               <h3>Business Hours</h3>
