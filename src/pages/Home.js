@@ -3,10 +3,13 @@ import ServiceCard from '../components/ServiceCard';
 import TestimonialCard from '../components/TestimonialCard';
 import QuoteForm from '../components/QuoteForm';
 import HireDeveloperForm from '../components/HireDeveloperForm';
+import ConsultationForm from '../components/ConsultationForm';
+import ScrollToTop from '../components/ScrollToTop';
 
 const Home = () => {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [isHireModalOpen, setIsHireModalOpen] = useState(false);
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
   
   const services = [
     {
@@ -44,6 +47,12 @@ const Home = () => {
       title: 'Digital Transformation',
       description: 'Complete digital transformation with cloud solutions and modern DevOps practices.',
       features: ['AWS Solutions', 'Azure Cloud', 'DevOps Implementation', 'Cloud Migration', 'Infrastructure']
+    },
+    {
+      icon: '⚡',
+      title: 'Salesforce Solutions',
+      description: 'Comprehensive Salesforce implementation and customization services.',
+      features: ['Salesforce Sales Cloud', 'Salesforce Service Cloud', 'Custom Development', 'Integration', 'Training']
     }
   ];
 
@@ -130,9 +139,9 @@ const Home = () => {
               <button onClick={() => setIsHireModalOpen(true)} className="btn btn-secondary">
                 Hire Expert Developers
               </button>
-              <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-success">
+              <button onClick={() => setIsConsultationModalOpen(true)} className="btn btn-success">
                 Schedule Free Consultation
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -169,6 +178,9 @@ const Home = () => {
                 title={service.title}
                 description={service.description}
                 features={service.features}
+                onContactClick={(serviceName) => {
+                  setIsConsultationModalOpen(true);
+                }}
               />
             ))}
           </div>
@@ -267,7 +279,7 @@ const Home = () => {
             <button onClick={() => setIsQuoteModalOpen(true)} className="btn btn-success">
               Get Free Quote
             </button>
-            <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+            <a href="/portfolio" className="btn btn-secondary">
               View Our Work
             </a>
           </div>
@@ -294,9 +306,9 @@ const Home = () => {
               <p><strong>Saturday:</strong> 10:00 AM - 4:00 PM IST</p>
               <p><strong>Sunday:</strong> Closed</p>
               <p><strong>Support:</strong> 24/7 Available</p>
-              <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-success">
+              <button onClick={() => setIsConsultationModalOpen(true)} className="btn btn-success">
                 Get Free Consultation
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -311,6 +323,13 @@ const Home = () => {
         isOpen={isHireModalOpen} 
         onClose={() => setIsHireModalOpen(false)} 
       />
+      <ConsultationForm 
+        isOpen={isConsultationModalOpen} 
+        onClose={() => setIsConsultationModalOpen(false)} 
+      />
+      
+      {/* Scroll to Top */}
+      <ScrollToTop />
     </div>
   );
 };

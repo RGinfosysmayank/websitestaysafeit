@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import ArticleSubmissionForm from '../components/ArticleSubmissionForm';
-import ScrollToTop from '../components/ScrollToTop';
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -412,9 +411,6 @@ const Blog = () => {
         isOpen={isArticleModalOpen} 
         onClose={() => setIsArticleModalOpen(false)} 
       />
-      
-      {/* Scroll to Top */}
-      <ScrollToTop />
     </div>
   );
 };

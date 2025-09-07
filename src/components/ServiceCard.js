@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ServiceCard = ({ icon, title, description, features }) => {
+const ServiceCard = ({ icon, title, description, features, onContactClick }) => {
   return (
     <div className="card">
       <div className="service-icon">
@@ -17,15 +17,13 @@ const ServiceCard = ({ icon, title, description, features }) => {
           ))}
         </ul>
       )}
-      <a 
-        href="https://forms.gle/AyAqUqRSrLDfkzDfA" 
-        target="_blank" 
-        rel="noopener noreferrer"
+      <button 
+        onClick={() => onContactClick && onContactClick(title)}
         className="btn btn-primary"
         style={{ marginTop: '20px', display: 'inline-block' }}
       >
-        Learn More
-      </a>
+        Contact Us
+      </button>
     </div>
   );
 };

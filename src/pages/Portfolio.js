@@ -1,48 +1,124 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ScrollToTop from '../components/ScrollToTop';
+import QuoteForm from '../components/QuoteForm';
+import ConsultationForm from '../components/ConsultationForm';
 
 const Portfolio = () => {
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
+  
   const projects = [
     {
-      title: 'E-Commerce Platform',
+      title: 'Post-Acute Care Portal',
       technology: 'ReactJS + .NET Core',
-      description: 'Complete e-commerce solution with payment gateway integration, inventory management, and admin dashboard.',
-      features: ['Payment Integration', 'Inventory Management', 'User Authentication', 'Admin Panel'],
-      category: 'Web Development'
+      description: 'Healthcare management platform for post-acute care facilities with patient tracking and care coordination.',
+      features: ['Patient Management', 'Care Coordination', 'Medical Records', 'Reporting Dashboard'],
+      category: 'Healthcare'
     },
     {
-      title: 'Mobile Banking App',
-      technology: 'React Native',
-      description: 'Secure mobile banking application with biometric authentication and real-time transaction processing.',
-      features: ['Biometric Security', 'Real-time Transactions', 'Account Management', 'Bill Payments'],
-      category: 'Mobile Development'
+      title: 'LibreView AEM Platform',
+      technology: 'Adobe Experience Manager',
+      description: 'Content management and digital experience platform built on Adobe Experience Manager.',
+      features: ['Content Management', 'Digital Experience', 'Multi-site Management', 'Analytics Integration'],
+      category: 'Enterprise Platform'
     },
     {
-      title: 'Healthcare Management System',
+      title: 'Dental Patient & Doctor Apps',
+      technology: 'React Native + Flutter',
+      description: 'Mobile applications for dental practices including patient scheduling and doctor management systems.',
+      features: ['Appointment Booking', 'Patient Records', 'Treatment Plans', 'Billing Integration'],
+      category: 'Healthcare Mobile'
+    },
+    {
+      title: 'Carloca Online Platform',
       technology: 'MERN Stack',
-      description: 'Comprehensive healthcare management system for hospitals with patient records and appointment scheduling.',
-      features: ['Patient Records', 'Appointment Booking', 'Doctor Portal', 'Reports & Analytics'],
-      category: 'Web Development'
+      description: 'Comprehensive cars marketplace platform with advanced search, financing options, and dealer management.',
+      features: ['Car Listings', 'Advanced Search', 'Financing Calculator', 'Dealer Portal'],
+      category: 'E-Commerce'
     },
     {
-      title: 'Real Estate Portal',
+      title: 'Annex2 PSE Assessment',
       technology: 'Angular + Java',
-      description: 'Property listing and management platform with advanced search and virtual tour capabilities.',
-      features: ['Property Listings', 'Advanced Search', 'Virtual Tours', 'Agent Management'],
-      category: 'Web Development'
+      description: 'Swiss Agency for Development and Cooperation assessment platform for project evaluation.',
+      features: ['Assessment Tools', 'Data Analytics', 'Reporting System', 'Multi-language Support'],
+      category: 'Government Portal'
     },
     {
-      title: 'Food Delivery App',
-      technology: 'Flutter',
-      description: 'Cross-platform food delivery application with real-time tracking and multiple payment options.',
-      features: ['Real-time Tracking', 'Multiple Payments', 'Restaurant Management', 'Order History'],
-      category: 'Mobile Development'
-    },
-    {
-      title: 'AI Chatbot Platform',
+      title: 'Smart Assessment OECD Data',
       technology: 'Python + AI/ML',
-      description: 'Intelligent chatbot platform with natural language processing and automated customer support.',
-      features: ['NLP Processing', 'Auto Responses', 'Analytics Dashboard', 'Multi-channel Support'],
-      category: 'AI Development'
+      description: 'OECD data analysis platform with intelligent assessment capabilities and automated reporting.',
+      features: ['Data Analytics', 'AI-powered Assessment', 'Automated Reports', 'Visualization Tools'],
+      category: 'Data Platform'
+    },
+    {
+      title: 'Salesforce Sales Cloud',
+      technology: 'Salesforce Platform',
+      description: 'Custom Salesforce Sales Cloud implementation with advanced automation and integration.',
+      features: ['Lead Management', 'Sales Automation', 'Pipeline Analytics', 'Custom Objects'],
+      category: 'CRM Solution'
+    },
+    {
+      title: 'Salesforce Service Cloud',
+      technology: 'Salesforce Platform',
+      description: 'Service Cloud implementation for customer support with case management and knowledge base.',
+      features: ['Case Management', 'Knowledge Base', 'Service Analytics', 'Omnichannel Support'],
+      category: 'Customer Service'
+    },
+    {
+      title: 'Salesforce Finance Cloud',
+      technology: 'Salesforce Financial Services',
+      description: 'Financial services platform built on Salesforce with client management and compliance features.',
+      features: ['Client Management', 'Compliance Tracking', 'Financial Planning', 'Risk Assessment'],
+      category: 'Financial Services'
+    },
+    {
+      title: 'PSE Project Assessment (World Bank)',
+      technology: 'ReactJS + .NET Core',
+      description: 'World Bank project assessment platform for evaluating development projects and impact analysis.',
+      features: ['Project Evaluation', 'Impact Analysis', 'Document Management', 'Stakeholder Portal'],
+      category: 'International Development'
+    },
+    {
+      title: 'Contact Database (SDC)',
+      technology: 'MERN Stack',
+      description: 'Swiss Development Cooperation contact management system with advanced search and reporting.',
+      features: ['Contact Management', 'Advanced Search', 'Data Analytics', 'Export Tools'],
+      category: 'Database Management'
+    },
+    {
+      title: 'EAP Poverty Portal (World Bank)',
+      technology: 'Angular + Java',
+      description: 'East Asia and Pacific poverty analysis portal with data visualization and research tools.',
+      features: ['Data Visualization', 'Research Tools', 'Statistical Analysis', 'Report Generation'],
+      category: 'Research Platform'
+    },
+    {
+      title: 'EAPDE-TF Portal (World Bank)',
+      technology: 'ReactJS + Python',
+      description: 'East Asia and Pacific Development Effectiveness Trust Fund management portal.',
+      features: ['Fund Management', 'Project Tracking', 'Financial Reporting', 'Stakeholder Dashboard'],
+      category: 'Fund Management'
+    },
+    {
+      title: 'Hardisty CRN (UK)',
+      technology: 'PowerApps + SharePoint',
+      description: 'UK-based Customer Relationship Network built on Microsoft PowerApps with integrated website.',
+      features: ['Customer Management', 'Workflow Automation', 'Document Management', 'Mobile Access'],
+      category: 'CRM Platform'
+    },
+    {
+      title: 'Task Management System',
+      technology: 'React + Node.js',
+      description: 'Open-source task management application with team collaboration features.',
+      features: ['Task Assignment', 'Team Collaboration', 'Progress Tracking', 'Time Management'],
+      category: 'Productivity Tool'
+    },
+    {
+      title: 'Inventory Management Portal',
+      technology: 'Vue.js + Laravel',
+      description: 'Open-source inventory management system for small to medium businesses.',
+      features: ['Stock Management', 'Order Processing', 'Supplier Management', 'Reports & Analytics'],
+      category: 'Business Tool'
     }
   ];
 
@@ -133,16 +209,6 @@ const Portfolio = () => {
                       </li>
                     ))}
                   </ul>
-                </div>
-                <div style={{ marginTop: '20px' }}>
-                  <a 
-                    href="https://forms.gle/AyAqUqRSrLDfkzDfA" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="btn btn-primary"
-                  >
-                    View Details
-                  </a>
                 </div>
               </div>
             ))}
@@ -253,15 +319,28 @@ const Portfolio = () => {
           <h2>Ready to See Your Project Here?</h2>
           <p>Let's discuss your requirements and create something amazing together.</p>
           <div className="mt-2">
-            <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+            <button onClick={() => setIsQuoteModalOpen(true)} className="btn btn-primary">
               Start Your Project
-            </a>
-            <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-success">
+            </button>
+            <button onClick={() => setIsConsultationModalOpen(true)} className="btn btn-success">
               Get Free Consultation
-            </a>
+            </button>
           </div>
         </div>
       </section>
+      
+      {/* Modals */}
+      <QuoteForm 
+        isOpen={isQuoteModalOpen} 
+        onClose={() => setIsQuoteModalOpen(false)} 
+      />
+      <ConsultationForm 
+        isOpen={isConsultationModalOpen} 
+        onClose={() => setIsConsultationModalOpen(false)} 
+      />
+      
+      {/* Scroll to Top */}
+      <ScrollToTop />
     </div>
   );
 };

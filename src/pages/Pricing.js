@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import QuoteForm from '../components/QuoteForm';
+import ConsultationForm from '../components/ConsultationForm';
+import ScrollToTop from '../components/ScrollToTop';
 
 const Pricing = () => {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
   
   const pricingPlans = [
     {
@@ -202,9 +205,7 @@ const Pricing = () => {
                 </ul>
                 
                 <a 
-                  href="https://forms.gle/AyAqUqRSrLDfkzDfA" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                  href="mailto:sales@staysafeit.com"
                   className={`btn ${plan.popular ? 'btn-primary' : 'btn-secondary'}`}
                   style={{ width: '100%' }}
                 >
@@ -357,12 +358,12 @@ const Pricing = () => {
             Contact us today for a free consultation and detailed project proposal.
           </p>
           <div>
-            <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-success">
+            <button onClick={() => setIsQuoteModalOpen(true)} className="btn btn-success">
               Start Your Project
-            </a>
-            <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+            </button>
+            <button onClick={() => setIsConsultationModalOpen(true)} className="btn btn-secondary">
               Schedule Call
-            </a>
+            </button>
           </div>
         </div>
       </section>
@@ -372,6 +373,13 @@ const Pricing = () => {
         isOpen={isQuoteModalOpen} 
         onClose={() => setIsQuoteModalOpen(false)} 
       />
+      <ConsultationForm 
+        isOpen={isConsultationModalOpen} 
+        onClose={() => setIsConsultationModalOpen(false)} 
+      />
+      
+      {/* Scroll to Top */}
+      <ScrollToTop />
     </div>
   );
 };

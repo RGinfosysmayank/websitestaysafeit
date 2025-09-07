@@ -1,10 +1,59 @@
 import React, { useState } from 'react';
 import QuoteForm from '../components/QuoteForm';
 import HireDeveloperForm from '../components/HireDeveloperForm';
+import ConsultationForm from '../components/ConsultationForm';
+import ScrollToTop from '../components/ScrollToTop';
 
 const Contact = () => {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [isHireModalOpen, setIsHireModalOpen] = useState(false);
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
+  
+  // Form state
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    service: '',
+    projectDetails: ''
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+  
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    
+    // Basic validation
+    if (!formData.fullName || !formData.email || !formData.projectDetails) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+    
+    // Simulate form submission (you can integrate with actual backend later)
+    console.log('Form submitted:', formData);
+    
+    // Clear form and show success message
+    setFormData({
+      fullName: '',
+      email: '',
+      phone: '',
+      service: '',
+      projectDetails: ''
+    });
+    setIsSubmitted(true);
+    
+    // Hide success message after 10 seconds
+    setTimeout(() => {
+      setIsSubmitted(false);
+    }, 10000);
+  };
   
   const contactInfo = [
     {
@@ -106,13 +155,16 @@ const Contact = () => {
               <h2>Send Us a Message</h2>
               <p>Fill out the form below and we'll get back to you within 24 hours.</p>
               
-              <div style={{ marginTop: '30px' }}>
+              <form onSubmit={handleFormSubmit} style={{ marginTop: '30px' }}>
                 <div style={{ marginBottom: '20px' }}>
                   <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600' }}>
                     Full Name *
                   </label>
                   <input 
                     type="text" 
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleInputChange}
                     placeholder="Enter your full name"
                     style={{
                       width: '100%',
@@ -121,6 +173,7 @@ const Contact = () => {
                       borderRadius: '5px',
                       fontSize: '1rem'
                     }}
+                    required
                   />
                 </div>
                 
@@ -130,6 +183,9 @@ const Contact = () => {
                   </label>
                   <input 
                     type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     placeholder="Enter your email address"
                     style={{
                       width: '100%',
@@ -138,6 +194,7 @@ const Contact = () => {
                       borderRadius: '5px',
                       fontSize: '1rem'
                     }}
+                    required
                   />
                 </div>
                 
@@ -147,6 +204,9 @@ const Contact = () => {
                   </label>
                   <input 
                     type="tel" 
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
                     placeholder="Enter your phone number"
                     style={{
                       width: '100%',
@@ -162,20 +222,25 @@ const Contact = () => {
                   <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600' }}>
                     Service Required
                   </label>
-                  <select style={{
-                    width: '100%',
-                    padding: '12px',
-                    border: '2px solid #eee',
-                    borderRadius: '5px',
-                    fontSize: '1rem'
-                  }}>
-                    <option>Select a service</option>
-                    <option>Web Development</option>
-                    <option>Mobile App Development</option>
-                    <option>AI/ML Consulting</option>
-                    <option>Testing Services</option>
-                    <option>Digital Transformation</option>
-                    <option>Other</option>
+                  <select 
+                    name="service"
+                    value={formData.service}
+                    onChange={handleInputChange}
+                    style={{
+                      width: '100%',
+                      padding: '12px',
+                      border: '2px solid #eee',
+                      borderRadius: '5px',
+                      fontSize: '1rem'
+                    }}
+                  >
+                    <option value="">Select a service</option>
+                    <option value="web-development">Web Development</option>
+                    <option value="mobile-app">Mobile App Development</option>
+                    <option value="ai-ml">AI/ML Consulting</option>
+                    <option value="testing">Testing Services</option>
+                    <option value="digital-transformation">Digital Transformation</option>
+                    <option value="other">Other</option>
                   </select>
                 </div>
                 
@@ -185,6 +250,9 @@ const Contact = () => {
                   </label>
                   <textarea 
                     rows="5"
+                    name="projectDetails"
+                    value={formData.projectDetails}
+                    onChange={handleInputChange}
                     placeholder="Describe your project requirements..."
                     style={{
                       width: '100%',
@@ -194,19 +262,35 @@ const Contact = () => {
                       fontSize: '1rem',
                       resize: 'vertical'
                     }}
+                    required
                   ></textarea>
                 </div>
                 
-                <a 
-                  href="https://forms.gle/AyAqUqRSrLDfkzDfA" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                <button 
+                  type="submit"
                   className="btn btn-primary"
                   style={{ width: '100%' }}
                 >
                   Send Message
-                </a>
-              </div>
+                </button>
+                
+                {/* Success Message */}
+                {isSubmitted && (
+                  <div style={{
+                    marginTop: '20px',
+                    padding: '15px',
+                    backgroundColor: '#f0f9ff',
+                    border: '2px solid #22c55e',
+                    borderRadius: '5px',
+                    color: '#22c55e',
+                    fontWeight: '500',
+                    fontSize: '0.95rem',
+                    lineHeight: '1.5'
+                  }}>
+                    ✅ Request Submitted Successfully! Thank you for your interest! Our team will review your requirements and get back to you within 24 hours with a detailed quote.
+                  </div>
+                )}
+              </form>
             </div>
 
             {/* Company Info */}
@@ -234,14 +318,12 @@ const Contact = () => {
                   >
                     Get Free Quote
                   </button>
-                  <a 
-                    href="https://forms.gle/AyAqUqRSrLDfkzDfA" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                  <button 
+                    onClick={() => setIsConsultationModalOpen(true)}
                     className="btn btn-success"
                   >
                     Schedule Consultation
-                  </a>
+                  </button>
                   <button 
                     onClick={() => setIsHireModalOpen(true)}
                     className="btn btn-secondary"
@@ -333,9 +415,7 @@ const Contact = () => {
           <div className="text-center mt-3">
             <p>Have more questions?</p>
             <a 
-              href="https://forms.gle/AyAqUqRSrLDfkzDfA" 
-              target="_blank" 
-              rel="noopener noreferrer"
+              href="mailto:sales@staysafeit.com"
               className="btn btn-primary"
             >
               Contact Us
@@ -377,6 +457,13 @@ const Contact = () => {
         isOpen={isHireModalOpen} 
         onClose={() => setIsHireModalOpen(false)} 
       />
+      <ConsultationForm 
+        isOpen={isConsultationModalOpen} 
+        onClose={() => setIsConsultationModalOpen(false)} 
+      />
+      
+      {/* Scroll to Top */}
+      <ScrollToTop />
     </div>
   );
 };

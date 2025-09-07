@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import ServiceCard from '../components/ServiceCard';
 import QuoteForm from '../components/QuoteForm';
+import ConsultationForm from '../components/ConsultationForm';
+import ScrollToTop from '../components/ScrollToTop';
 
 const Services = () => {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
   
   const services = [
     {
@@ -170,6 +173,9 @@ const Services = () => {
                 title={service.title}
                 description={service.description}
                 features={service.features}
+                onContactClick={(serviceName) => {
+                  setIsConsultationModalOpen(true);
+                }}
               />
             ))}
           </div>
@@ -191,6 +197,9 @@ const Services = () => {
                 title={service.title}
                 description={service.description}
                 features={service.features}
+                onContactClick={(serviceName) => {
+                  setIsConsultationModalOpen(true);
+                }}
               />
             ))}
           </div>
@@ -282,7 +291,7 @@ const Services = () => {
             <button onClick={() => setIsQuoteModalOpen(true)} className="btn btn-primary">
               Get Free Quote
             </button>
-            <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-success">
+            <a href="/pricing" className="btn btn-success">
               View Pricing Plans
             </a>
           </div>
@@ -294,6 +303,13 @@ const Services = () => {
         isOpen={isQuoteModalOpen} 
         onClose={() => setIsQuoteModalOpen(false)} 
       />
+      <ConsultationForm 
+        isOpen={isConsultationModalOpen} 
+        onClose={() => setIsConsultationModalOpen(false)} 
+      />
+      
+      {/* Scroll to Top */}
+      <ScrollToTop />
     </div>
   );
 };

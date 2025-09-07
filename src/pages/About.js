@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import QuoteForm from '../components/QuoteForm';
 import HireDeveloperForm from '../components/HireDeveloperForm';
+import ScrollToTop from '../components/ScrollToTop';
 
 const About = () => {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
@@ -56,9 +57,9 @@ const About = () => {
                 relationships. Our 98% client retention rate and 24/7 support commitment are testament to this philosophy.
               </p>
               <div className="mt-2">
-                <a href="https://forms.gle/AyAqUqRSrLDfkzDfA" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                <button onClick={() => setIsQuoteModalOpen(true)} className="btn btn-primary">
                   Start Your Project With Us
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -175,6 +176,9 @@ const About = () => {
         isOpen={isHireModalOpen} 
         onClose={() => setIsHireModalOpen(false)} 
       />
+      
+      {/* Scroll to Top */}
+      <ScrollToTop />
     </div>
   );
 };
