@@ -231,6 +231,22 @@ p {
   .section {
     padding: 50px 0;
   }
+  
+  /* Blog specific responsive styles */
+  .grid[style*="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Popular topics cards should stack nicely on very small screens */
+  .card {
+    padding: 20px !important;
+  }
+  
+  .grid[style*="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))"] {
+    gap: 15px !important;
+  }
 }
 
 /* Animations */

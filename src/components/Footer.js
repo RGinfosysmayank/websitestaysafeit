@@ -13,7 +13,7 @@ const Footer = () => {
             <p><strong>📍 Location:</strong> Based in Delhi, NCR, India – Serving Globally</p>
             <p><strong>📞 Phone:</strong> +91-8800869033 (Available 24/7)</p>
             <p><strong>✉️ Email:</strong> sales@staysafeit.com</p>
-            <p><strong>💼 LinkedIn:</strong> <a href="https://linkedin.com/company/staysafe-it-solutions" target="_blank" rel="noopener noreferrer" style={{ color: '#667eea' }}>Connect with us</a></p>
+            <p><strong>💼 LinkedIn:</strong> <a href="https://linkedin.com/company/staysafeit" target="_blank" rel="noopener noreferrer" style={{ color: '#667eea' }}>Connect with us</a></p>
             <p><strong>⭐ Rating:</strong> 4.8/5 (150+ Client Reviews)</p>
           </div>
           
